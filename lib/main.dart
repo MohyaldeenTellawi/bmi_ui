@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
-import 'result.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BMI App',
       theme: ThemeData(
-        iconTheme: const IconThemeData(color: Colors.white),
+        canvasColor: Color.fromRGBO(245, 222, 179, 1),
+        iconTheme: const IconThemeData(color: Colors.blueGrey),
         textTheme: const TextTheme(
           headline1: TextStyle(
             fontSize: 45,
@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
             color: Color.fromRGBO(158, 160, 95, 1),
           ),
           headline2: TextStyle(
-            fontSize: 35,
-            fontWeight: FontWeight.w900,
-            color: Color.fromRGBO(96, 130, 182, 1),
+            fontSize: 24,
+            fontWeight: FontWeight.w800,
+            color: Color.fromRGBO(145, 56, 49, 1),
           ),
         ),
       ),

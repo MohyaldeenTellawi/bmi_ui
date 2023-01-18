@@ -36,35 +36,48 @@ class Result extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromRGBO(96, 130, 182, 1),
-        foregroundColor: const Color.fromRGBO(154, 42, 42, 1),
+        backgroundColor: const Color.fromRGBO(145, 56, 49, 1),
+        foregroundColor: const Color.fromRGBO(245, 222, 179, 1),
       ),
       body: SafeArea(
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                "Gender: ${isMale ? "Male" : "Female"}",
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.center,
+          child: Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                width: 350,
+                margin: EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(70),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      "Gender: ${isMale ? "Male" : "Female"}",
+                      style: Theme.of(context).textTheme.headline2,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "Result: ${result.toStringAsFixed(2)}",
+                      style: Theme.of(context).textTheme.headline2,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "Age: $age",
+                      style: Theme.of(context).textTheme.headline2,
+                      textAlign: TextAlign.center,
+                    ),
+                    Text(
+                      "Healthiness: $resultPhrase",
+                      style: Theme.of(context).textTheme.headline2,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-              Text(
-                "Result: ${result.toStringAsFixed(2)}",
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                "Age: $age",
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                "Healthiness: $resultPhrase",
-                style: Theme.of(context).textTheme.headline2,
-                textAlign: TextAlign.center,
-              ),
-            ],
+            ),
           ),
         ),
       ),

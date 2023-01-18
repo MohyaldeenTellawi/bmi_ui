@@ -27,15 +27,15 @@ class _MyHomePageState extends State<MyHomePage> {
             fontWeight: FontWeight.w800,
           ),
         ),
-        backgroundColor: const Color.fromRGBO(96, 130, 182, 1),
-        foregroundColor: const Color.fromRGBO(154, 42, 42, 1),
+        backgroundColor: const Color.fromRGBO(145, 56, 49, 1),
+        foregroundColor: const Color.fromRGBO(245, 222, 179, 1),
         centerTitle: true,
       ),
       body: SafeArea(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(30),
               child: Row(children: [
                 m1Expanded(context, "male"),
                 const SizedBox(width: 15),
@@ -45,11 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 60),
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: Colors.blueGrey,
+                  borderRadius: BorderRadius.circular(90),
+                  color: Colors.black12,
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -62,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Color.fromRGBO(154, 42, 42, 1),
                       ),
                     ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       textBaseline: TextBaseline.alphabetic,
@@ -72,8 +75,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: const TextStyle(
                               fontSize: 45,
                               fontWeight: FontWeight.w800,
-                              color: Colors.white),
+                              color: Colors.blueGrey),
                           textAlign: TextAlign.center,
+                        ),
+                        SizedBox(
+                          width: 3,
                         ),
                         const Text(
                           "CM",
@@ -88,6 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Slider(
                         min: 90,
                         max: 220,
+                        activeColor: Color.fromRGBO(154, 42, 42, 1),
+                        inactiveColor: Color.fromRGBO(96, 130, 182, 1),
                         value: heightVal,
                         onChanged: (newValue) {
                           setState(() {
@@ -101,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(30),
               child: Row(children: [
                 m2Expanded(context, "weight"),
                 const SizedBox(width: 15),
@@ -110,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
+            margin: EdgeInsets.fromLTRB(95, 0, 95, 0),
             height: MediaQuery.of(context).size.height / 20,
             width: double.infinity,
             child: ElevatedButton(
@@ -118,10 +127,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
                 ),
                 foregroundColor: MaterialStatePropertyAll(
-                  Color.fromRGBO(154, 42, 42, 1),
+                  Color.fromRGBO(245, 222, 179, 1),
                 ),
                 backgroundColor: MaterialStatePropertyAll(
-                  Color.fromRGBO(96, 130, 182, 1),
+                  Color.fromRGBO(145, 56, 49, 1),
                 ),
               ),
               onPressed: () {
@@ -159,16 +168,16 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(70),
               color: (isMale && type == "male") || (!isMale && type == "female")
-                  ? Colors.blue
-                  : Colors.blueGrey),
+                  ? Color.fromRGBO(225, 193, 110, 1)
+                  : Colors.black12),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 type == "male" ? Icons.male : Icons.female,
-                size: 90,
+                size: 85,
               ),
               const SizedBox(height: 5),
               Text(type == "male" ? "Male" : "Female",
@@ -188,8 +197,8 @@ class _MyHomePageState extends State<MyHomePage> {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: Colors.blueGrey,
+          borderRadius: BorderRadius.circular(70),
+          color: Colors.black12,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -205,7 +214,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               type == "weight" ? "$weightVal" : "$age",
               style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.blueGrey,
                   fontSize: 45,
                   fontWeight: FontWeight.w800),
             ),
@@ -213,6 +222,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 FloatingActionButton(
+                  backgroundColor: Color.fromRGBO(154, 42, 42, 1),
                   heroTag: type == "age" ? "age--" : "weight--",
                   onPressed: () {
                     setState(() {
@@ -224,6 +234,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const SizedBox(width: 12),
                 FloatingActionButton(
+                  backgroundColor: Color.fromRGBO(154, 42, 42, 1),
                   heroTag: type == "age" ? "age++" : "weight++",
                   onPressed: () {
                     setState(() {
